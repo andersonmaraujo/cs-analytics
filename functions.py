@@ -38,6 +38,7 @@ def refactor_match_data(match_data):
         'matchID': match_data['matchID'],
         'mapName': match_data['mapName'], 
         'winnerTeam': match_data['gameRounds'][-1]['winningTeam'],
+        'loserTeam': match_data['gameRounds'][-1]['losingTeam'],
         'winnerScore': match_data['gameRounds'][-1]['endTScore'] if match_data['gameRounds'][-1]['winningTeam'] == match_data['gameRounds'][-1]['tTeam'] else match_data['gameRounds'][-1]['endCTScore'],
         'loserScore': match_data['gameRounds'][-1]['endCTScore'] if match_data['gameRounds'][-1]['winningTeam'] == match_data['gameRounds'][-1]['tTeam'] else match_data['gameRounds'][-1]['endTScore'],
         'gameRounds': get_rounds_info(match_data)['gameRounds']
